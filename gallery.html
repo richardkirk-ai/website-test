@@ -41,9 +41,13 @@
       width: 100%;
       display: block;
       transition: transform 0.3s ease;
+      background: #f0ede8;
     }
     .gallery-item:hover img {
       transform: scale(1.03);
+    }
+    .gallery-item img[loading] {
+      min-height: 160px;
     }
     .gallery-item .overlay {
       position: absolute;
@@ -160,34 +164,34 @@
 
   <!-- GALLERY GRID -->
   <div class="gallery-grid" id="galleryGrid">
-    <div class="gallery-item" onclick="openLightbox(0)"><img src="images/03c46847-3a7b-4efd-ae27-775fa8135217.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(1)"><img src="images/804e8b1c-2c25-4e67-b28b-7fe9ec4af5d0.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(2)"><img src="images/IMG_0039.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(3)"><img src="images/IMG_0161-cropped.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(4)"><img src="images/IMG_0317.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(5)"><img src="images/IMG_0581.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(6)"><img src="images/IMG_2267.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(7)"><img src="images/IMG_2271.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(8)"><img src="images/IMG_2612.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(9)"><img src="images/IMG_2736.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(10)"><img src="images/IMG_3006.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(11)"><img src="images/IMG_3732.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(12)"><img src="images/IMG_4439.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(13)"><img src="images/IMG_5946.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(14)"><img src="images/IMG_7039.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(15)"><img src="images/IMG_7172.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(16)"><img src="images/IMG_8228.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(17)"><img src="images/IMG_8300.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(18)"><img src="images/IMG_9263.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(19)"><img src="images/IMG_9694.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(20)"><img src="images/PHOTO-2025-11-19-21-37-35 2.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(21)"><img src="images/PHOTO-2025-11-19-21-37-35.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(22)"><img src="images/PHOTO-2025-11-19-21-51-48.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(23)"><img src="images/PHOTO-2025-11-19-21-51-49.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(24)"><img src="images/PHOTO-2025-11-19-21-51-50 2.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(25)"><img src="images/PHOTO-2025-11-19-21-51-50.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(26)"><img src="images/PHOTO-2025-11-20-22-21-44.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
-    <div class="gallery-item" onclick="openLightbox(27)"><img src="images/f00460f7-8f5e-483e-9037-ee507a286812.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(0)"><img src="images/thumbs/03c46847-3a7b-4efd-ae27-775fa8135217.JPG" data-full="images/03c46847-3a7b-4efd-ae27-775fa8135217.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(1)"><img src="images/thumbs/804e8b1c-2c25-4e67-b28b-7fe9ec4af5d0.JPG" data-full="images/804e8b1c-2c25-4e67-b28b-7fe9ec4af5d0.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(2)"><img src="images/thumbs/IMG_0039.JPG" data-full="images/IMG_0039.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(3)"><img src="images/thumbs/IMG_0161-cropped.JPG" data-full="images/IMG_0161-cropped.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(4)"><img src="images/thumbs/IMG_0317.jpg" data-full="images/IMG_0317.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(5)"><img src="images/thumbs/IMG_0581.JPG" data-full="images/IMG_0581.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(6)"><img src="images/thumbs/IMG_2267.jpg" data-full="images/IMG_2267.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(7)"><img src="images/thumbs/IMG_2271.jpg" data-full="images/IMG_2271.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(8)"><img src="images/thumbs/IMG_2612.jpg" data-full="images/IMG_2612.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(9)"><img src="images/thumbs/IMG_2736.jpg" data-full="images/IMG_2736.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(10)"><img src="images/thumbs/IMG_3006.jpg" data-full="images/IMG_3006.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(11)"><img src="images/thumbs/IMG_3732.jpg" data-full="images/IMG_3732.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(12)"><img src="images/thumbs/IMG_4439.jpg" data-full="images/IMG_4439.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(13)"><img src="images/thumbs/IMG_5946.JPG" data-full="images/IMG_5946.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(14)"><img src="images/thumbs/IMG_7039.JPG" data-full="images/IMG_7039.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(15)"><img src="images/thumbs/IMG_7172.JPG" data-full="images/IMG_7172.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(16)"><img src="images/thumbs/IMG_8228.JPG" data-full="images/IMG_8228.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(17)"><img src="images/thumbs/IMG_8300.jpg" data-full="images/IMG_8300.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(18)"><img src="images/thumbs/IMG_9263.jpg" data-full="images/IMG_9263.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(19)"><img src="images/thumbs/IMG_9694.JPG" data-full="images/IMG_9694.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(20)"><img src="images/thumbs/PHOTO-2025-11-19-21-37-35 2.jpg" data-full="images/PHOTO-2025-11-19-21-37-35 2.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(21)"><img src="images/thumbs/PHOTO-2025-11-19-21-37-35.jpg" data-full="images/PHOTO-2025-11-19-21-37-35.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(22)"><img src="images/thumbs/PHOTO-2025-11-19-21-51-48.jpg" data-full="images/PHOTO-2025-11-19-21-51-48.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(23)"><img src="images/thumbs/PHOTO-2025-11-19-21-51-49.jpg" data-full="images/PHOTO-2025-11-19-21-51-49.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(24)"><img src="images/thumbs/PHOTO-2025-11-19-21-51-50 2.jpg" data-full="images/PHOTO-2025-11-19-21-51-50 2.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(25)"><img src="images/thumbs/PHOTO-2025-11-19-21-51-50.jpg" data-full="images/PHOTO-2025-11-19-21-51-50.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(26)"><img src="images/thumbs/PHOTO-2025-11-20-22-21-44.jpg" data-full="images/PHOTO-2025-11-20-22-21-44.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(27)"><img src="images/thumbs/f00460f7-8f5e-483e-9037-ee507a286812.jpg" data-full="images/f00460f7-8f5e-483e-9037-ee507a286812.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
   </div>
 
   <!-- LIGHTBOX -->
@@ -221,7 +225,8 @@
   </footer>
 
   <script>
-    const images = Array.from(document.querySelectorAll('.gallery-item img')).map(img => img.src);
+    const imgEls = Array.from(document.querySelectorAll('.gallery-item img'));
+    const fullImages = imgEls.map(img => img.dataset.full);
     let current = 0;
 
     function openLightbox(index) {
@@ -237,13 +242,16 @@
     }
 
     function changePhoto(dir) {
-      current = (current + dir + images.length) % images.length;
+      current = (current + dir + fullImages.length) % fullImages.length;
       updateLightbox();
     }
 
     function updateLightbox() {
-      document.getElementById('lightboxImg').src = images[current];
-      document.getElementById('lightboxCounter').textContent = (current + 1) + ' / ' + images.length;
+      const lb = document.getElementById('lightboxImg');
+      lb.style.opacity = '0';
+      lb.src = fullImages[current];
+      lb.onload = () => { lb.style.transition = 'opacity 0.2s'; lb.style.opacity = '1'; };
+      document.getElementById('lightboxCounter').textContent = (current + 1) + ' / ' + fullImages.length;
     }
 
     document.getElementById('lightbox').addEventListener('click', function(e) {
