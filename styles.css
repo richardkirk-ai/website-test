@@ -162,18 +162,12 @@ h2 {
 .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
 
 .hero-image { flex: 0 0 auto; }
-.cat-card {
-  background: var(--orange-lt);
-  border: 2px solid var(--orange);
+.hero-photo {
+  width: 420px;
+  max-width: 100%;
   border-radius: 20px;
-  padding: 48px 56px;
-  text-align: center;
-}
-.cat-emoji { font-size: 6rem; margin-bottom: 16px; }
-.cat-label {
-  font-size: 0.85rem;
-  color: var(--orange-dk);
-  font-weight: 600;
+  object-fit: cover;
+  box-shadow: var(--shadow);
 }
 
 /* =====================
