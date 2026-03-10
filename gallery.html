@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ginger's Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .gallery-hero {
+      text-align: center;
+      padding: 80px 24px 48px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .gallery-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+    .gallery-hero p {
+      color: var(--mid);
+      font-size: 1.1rem;
+    }
+
+    .gallery-grid {
+      columns: 3 280px;
+      column-gap: 16px;
+      padding: 0 24px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+    .gallery-item .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(244, 114, 30, 0);
+      transition: background 0.3s;
+      border-radius: 12px;
+    }
+    .gallery-item:hover .overlay {
+      background: rgba(244, 114, 30, 0.15);
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 88vh;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 20px;
+      right: 28px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+      opacity: 0.8;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-prev,
+    .lightbox-next {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: white;
+      cursor: pointer;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      opacity: 0.7;
+      transition: opacity 0.2s, background 0.2s;
+    }
+    .lightbox-prev:hover,
+    .lightbox-next:hover { opacity: 1; background: rgba(255,255,255,0.2); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+    .lightbox-counter {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">🐱 Ginger</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#stats">Stats</a></li>
+        <li><a href="index.html#features">Talents</a></li>
+        <li><a href="index.html#testimonials">Reviews</a></li>
+        <li><a href="gallery.html" style="color: var(--orange); font-weight:700;">Gallery</a></li>
+      </ul>
+      <a class="btn btn-primary" href="index.html#contact">Meet Ginger</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="gallery-hero">
+    <span class="section-tag">Photo Gallery</span>
+    <h1>Ginger through the lens 📸</h1>
+    <p>A curated collection of Ginger's finest moments. Click any photo to view full size.</p>
+  </div>
+
+  <!-- GALLERY GRID -->
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="gallery-item" onclick="openLightbox(0)"><img src="images/IMG_0039.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(1)"><img src="images/IMG_0161.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(2)"><img src="images/IMG_0161-cropped.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(3)"><img src="images/IMG_0317.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(4)"><img src="images/IMG_0581.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(5)"><img src="images/IMG_0581 2.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(6)"><img src="images/IMG_2145.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(7)"><img src="images/IMG_2267.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(8)"><img src="images/IMG_2271.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(9)"><img src="images/IMG_2612.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(10)"><img src="images/IMG_2736.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(11)"><img src="images/IMG_3006.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(12)"><img src="images/IMG_3732.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(13)"><img src="images/IMG_3766.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(14)"><img src="images/IMG_4439.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(15)"><img src="images/IMG_5946.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(16)"><img src="images/IMG_7039.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(17)"><img src="images/IMG_7172.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(18)"><img src="images/IMG_8228.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(19)"><img src="images/IMG_8300.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(20)"><img src="images/IMG_8347.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(21)"><img src="images/IMG_9263.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(22)"><img src="images/IMG_9342.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(23)"><img src="images/IMG_9694.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(24)"><img src="images/PHOTO-2025-10-29-18-08-30.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(25)"><img src="images/PHOTO-2025-11-19-21-37-35.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(26)"><img src="images/PHOTO-2025-11-19-21-37-35 2.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(27)"><img src="images/PHOTO-2025-11-19-21-51-48.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(28)"><img src="images/PHOTO-2025-11-19-21-51-49.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(29)"><img src="images/PHOTO-2025-11-19-21-51-50.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(30)"><img src="images/PHOTO-2025-11-19-21-51-50 2.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(31)"><img src="images/PHOTO-2025-11-20-22-21-13.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(32)"><img src="images/PHOTO-2025-11-20-22-21-44.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(33)"><img src="images/PHOTO-2025-11-20-22-21-44 2.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(34)"><img src="images/03c46847-3a7b-4efd-ae27-775fa8135217.JPG" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+    <div class="gallery-item" onclick="openLightbox(35)"><img src="images/f00460f7-8f5e-483e-9037-ee507a286812.jpg" alt="Ginger" loading="lazy" /><div class="overlay"></div></div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-prev" onclick="changePhoto(-1)">‹</button>
+    <img id="lightboxImg" src="" alt="Ginger" />
+    <button class="lightbox-next" onclick="changePhoto(1)">›</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-logo">🐱 Ginger</span>
+        <p>The world's greatest cat. Probably.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#stats">Stats</a>
+        <a href="index.html#features">Talents</a>
+        <a href="index.html#testimonials">Reviews</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Ginger. All rights reserved. All treats reserved too.</p>
+    </div>
+  </footer>
+
+  <script>
+    const images = Array.from(document.querySelectorAll('.gallery-item img')).map(img => img.src);
+    let current = 0;
+
+    function openLightbox(index) {
+      current = index;
+      updateLightbox();
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function changePhoto(dir) {
+      current = (current + dir + images.length) % images.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      document.getElementById('lightboxImg').src = images[current];
+      document.getElementById('lightboxCounter').textContent = (current + 1) + ' / ' + images.length;
+    }
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'ArrowRight') changePhoto(1);
+      if (e.key === 'ArrowLeft') changePhoto(-1);
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
